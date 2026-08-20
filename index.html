@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AMBRE NOIR — the scent of everything left unsaid</title>
+  <meta name="description" content="Scroll to fly through the world of Ambre Noir — from the dawn harvest to the bottle." />
+  <style>
+    :root, .sw-root {
+      --sw-bg: #0B0A0C;
+      --sw-ink: #F3ECE0;
+      --sw-ink-soft: #9a9088;
+      --sw-accent: #C9A24B;
+      --sw-font-display: "Didot", "Bodoni 72", "Playfair Display", Georgia, serif;
+      --sw-font-body: "Optima", "Avenir Next", -apple-system, system-ui, sans-serif;
+    }
+    .sw-copy__title { letter-spacing: .01em; font-weight: 400; }
+    .sw-copy__eyebrow { letter-spacing: .28em; }
+
+    /* The engine's glow layer mixes in 45% white — a milky smudge on a dark page. */
+    .sw-sky__glow {
+      background: radial-gradient(58% 40% at 72% 18%, rgba(201,162,75,.16), transparent 70%),
+                  radial-gradient(50% 38% at 46% 56%, rgba(201,138,125,.08), transparent 72%);
+    }
+
+    /* Dark-theme the engine chrome — its defaults assume a light page. */
+    .sw-nav { background: rgba(255,255,255,.06); border-color: rgba(201,162,75,.22); }
+    .sw-nav__item.is-active { color: #0B0A0C; }
+    .sw-topcta { color: #0B0A0C; background: var(--sw-ink); }
+    .sw-route__label { color: var(--sw-ink); background: rgba(20,18,20,.75); border-color: rgba(201,162,75,.22); }
+    .sw-copy__tags li { color: var(--sw-ink); background: rgba(255,255,255,.06); border-color: rgba(201,162,75,.3); }
+    .sw-btn--primary { color: #0B0A0C; background: var(--sw-ink); }
+    .sw-btn--ghost { color: var(--sw-ink); border-color: rgba(243,236,224,.3); }
+    .sw-hint i { border-color: rgba(243,236,224,.3); }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="world"></div>
+
+  <script src="scrub-engine.js"></script>
+  <script>
+    mountLetsScroll(document.getElementById('world'), {
+      brand: { name: 'AMBRE NOIR', href: '#top' },
+      cta: { label: 'Discover', href: '#finale' },
+      hint: 'scroll to begin',
+      diveScroll: 1.4,
+      sections: [
+        {
+          id: 'fields', label: 'The Harvest',
+          still: 'assets/img/still_1_fields.png',
+          clip: 'assets/vid/leg_1_fields.mp4',
+          accent: '#C98A7D',
+          scroll: 1.6,
+          eyebrow: 'Picked before the light',
+          title: 'It begins in the dark.',
+          body: 'Rose and jasmine are cut at blue-dawn, while the oil is still asleep in the petal.',
+          tags: ['Single-harvest', 'Hand-cut at 4am'],
+        },
+        {
+          id: 'distillery', label: 'The Distillation',
+          still: 'assets/img/still_2_distillery.png',
+          clip: 'assets/vid/leg_2_distillery.mp4',
+          accent: '#6E2A1E',
+          linger: 0.4,
+          eyebrow: 'Twelve hours of copper',
+          title: 'Patience, then essence.',
+          body: 'Six hundred kilos of petal surrender a single litre of absolute — and not a drop more.',
+          tags: ['Copper alembic', 'Small batch'],
+        },
+        {
+          id: 'atelier', label: 'The Atelier',
+          still: 'assets/img/still_3_atelier.png',
+          clip: 'assets/vid/leg_3_atelier.mp4',
+          accent: '#C9A24B',
+          scroll: 1.5, linger: 0.35,
+          eyebrow: 'Composed, not mixed',
+          title: 'Four hundred notes. One chord.',
+          body: 'Our perfumer works the organ by hand, a blotter at a time, until the accord stops arguing.',
+          tags: ['Natural absolutes', 'No filler', 'Aged 6 months'],
+        },
+        {
+          id: 'finale', label: 'Ambre Noir',
+          still: 'assets/img/still_4_hero.png',
+          clip: 'assets/vid/leg_4_hero.mp4',
+          accent: '#C9A24B',
+          scroll: 1.8, linger: 0.5,
+          eyebrow: 'Eau de parfum · 50ml',
+          title: 'Ambre Noir.',
+          body: 'Amber, oud and dark rose. The scent of everything left unsaid.',
+          tags: [],
+          cta: { primary: { label: 'Shop the bottle', href: '#' },
+                 secondary: { label: 'Request a sample', href: '#' } },
+        },
+      ],
+      connectors: [],
+    });
+  </script>
+</body>
+</html>
